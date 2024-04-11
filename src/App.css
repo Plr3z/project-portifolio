@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
+*{
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  color: var(--font-color);
+}
+
+:root{
+  --font-color: white;
+  --ter-color: grey;
+  --sub-color: rgb(182, 182, 182);
+  --background: rgb(11, 10, 10);
+
+}
+
+body{
+  background-color: rgb(11, 10, 10);
+}
+
+header{
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background);
+  
+  padding: 20px 70px;
+}
+
+header .menu-bar{
+  display: none;
+}
+
+header h1{
+  font-size: 25px;
+  cursor: pointer;
+}
+
+header ul{
+  display: flex;
+}
+
+header ul li a{
+  margin: 0 20px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+header ul li a:hover{
+  color: var(--sub-color);
+}
+
+
+
+.landing-page{
+  z-index: -1;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.landing-page .left-page{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 6%;
+}
+
+.left-page h1{
+  font-size: 70px;
+}
+
+.left-page span{
+  position: relative;
+  font-weight: 700;
+  font-size: 30px;
+  content: '';
+  width: 230px;
+  display: inline-block;
+}
+
+.left-page span::before{
+  content: '';
+  animation: palavras 12s infinite;
+}
+
+
+
+
+.left-page span::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--background);
+  animation: digita 20s steps(12) infinite, cursor .4s infinite;
+}
+
+footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p{
+  font-size: 10px;
+}
+
+
+
+@keyframes cursor{
+  to{
+    border-left: 2px solid var(--ter-color);
+  }
+}
+
+@keyframes digita{
+  10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+    left: 100%;
+  }
+
+  5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+    left: 0%;
+  } 
+}
+
+.left-page p{
+  color: var(--sub-color);
+}
+
+@keyframes palavras{
+  0%, 33.3%{
+    content: 'Development';
+  }
+
+  34%, 66.6%{
+    content: 'Full-Stack';
+  }
+
+  67%, 100%{
+    content:'Dev Web';
+  }
+
+}
+
+
+
+.landing-page .rigth-page{
+  
+  width: 50%;
+  height: 100%;
+  background-image: url('./vetor-image.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: 200px;
+}
+
+.about-me{
+  padding: 100px 0;
+  background-color: var(--background);
+}
+
+
+.about-me .lista-acima{
+  display: flex;
+  padding: 0 50px;
+}
+
+.card{
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lista-abaixo{
+  margin-top: 20px;
+  display: flex;
+  padding: 0 200px;
+}
+
+.lista-abaixo .card{
+  margin: 0 50px;
+}
+
+
+
+.card i{
+  font-size: 60px;
+  color: var(--font-color);
+}
+
+.card p{
+  text-align: center;
+  color: var(--sub-color)  ;
+}
+
+.contact{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact form input{
+  color: var(--background);
+  outline: none;
+  width: 300px;
+  height: 40px;
+  padding: 0 30px;
+  border-radius: 10px;
+  margin: 0 0 40px 0;
+  border: 2px solid white;
+  background-color: black;
+  color: var(--font-color);
+}
+
+.contact form input::placeholder{
+  color: rgb(177, 177, 177);
+}
+
+.contact form button{
+  width: 100px;
+  height: 30px;
+  background-color: var(--background);
+  border: 2px solid var(--font-color);
+  margin: 0 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: .7s;
+
+}
+
+.contact form button:hover{
+  color: var(--background);
+  z-index: 1;
+}
+
+.contact form button::before{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  border-radius: 8px;
+  top: 0%;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  transition: .7s;
+  z-index: -1;
+}
+
+.contact form button:hover::before{
+  width: 100%;
+}
+
+
+.sucesso{
+  width: 270px;
+  height: 40px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: green;
+  border: 3px solid green;
+  z-index: 1000;
+  top: 80px;
+  right: 40px;
+  border-radius: 10px;
+  
+  
+}
+
+
+
+.sucesso p{
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+@media screen and (max-width: 950px) {
+  .landing-page{
+    flex-direction: column;
+    margin-top: 200px;
+
+  }
+
+  header{
+    top: 0;
+
+  }
+
+  header ul{
+    display: none;
+  }
+
+  header .menu-bar{
+    display: flex;
+  }
+
+  .left-page span{
+    width: 150px;
+    font-size: 20px;
+  }
+  
+
+  .lista-acima{
+    flex-direction: column;
+  }
+
+  .lista-acima .card{
+    margin-top: 20px;
+  }
+
+  .lista-abaixo{
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .lista-abaixo .card{
+    margin: 10px 50px;
+  }
+
+
+
+
+  
+}
+
+
+@media screen and (max-width: 450px) {
+
+  .landing-page .left-page p{
+    text-align: center;
+  }
+
+  .left-page span{
+    width: 140px;
+    font-size: 19px;
+  }
+
+  .left-page h1{
+    text-align: center;
+    margin-right: 20px;
+    font-size: 55px;
+  }
+
+
+  
+}
+
+
+
+
+
+
+
